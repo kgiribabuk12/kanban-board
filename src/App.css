@@ -1,38 +1,122 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Kanban Board Styles */
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.column {
+  background-color: #f4f5f7;
+  border-radius: 4px;
+  width: 250px;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.column h2 {
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #0079bf;
+  color: white;
+  border-radius: 4px;
+}
+
+.task-card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s ease;
+}
+
+.task-card h3 {
+  margin: 0 0 5px 0;
+}
+
+.task-card p {
+  margin: 0;
+  color: #5e6c84;
+}
+
+/* New Task Form Styles */
+.new-task-form {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.new-task-form form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+
+.new-task-form input,
+.new-task-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.new-task-form button {
+  padding: 10px;
+  background-color: #0079bf;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+/* Search Bar Styles */
+.search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .kanban-board {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .column {
+    width: 80%;
+  }
+
+  .new-task-form {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .search-bar input {
+    width: 80%;
   }
 }
